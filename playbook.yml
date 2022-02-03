@@ -1,0 +1,15 @@
+---
+  - name: Install necessary packages
+    hosts: app
+    roles:
+    - base
+
+  - name: Build application
+    hosts: app
+    roles:
+    - build
+
+  - name: Application deployment
+    hosts: app
+    roles:
+    - deploy

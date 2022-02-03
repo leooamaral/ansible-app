@@ -1,0 +1,6 @@
+---
+# vars file for app build
+app_destination: "/home/ubuntu"
+app_source: "./java-test-app"
+gradlew_directory: "/home/ubuntu/java-test-app/gradlew"
+directory_entry_gradlew: "cd /home/ubuntu/java-test-app/ && ./gradlew clean build bootJar"

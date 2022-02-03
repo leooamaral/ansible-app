@@ -1,0 +1,25 @@
+---
+- name: Add repository for Java installation
+  ansible.builtin.apt_repository:
+    repo: "{{ java_repository }}"
+  become: yes
+
+- name: Update repositories cache and Install Java 11
+  apt:
+    name: "{{ java_install }}"
+    update_cache: yes
+  become: yes
+
+- name: Import the repository signing key
+  shell: "{{ db_repo }}"
+  become: yes
+
+- name: Create the file repository configuration for postgres install
+  shell: "{{ db_repo_config }}"
+  become: yes
+
+- name: Update and install Postgres 13
+  apt:
+    name: "{{ db_install }}"
+    update_cache: yes
+  become: yes

@@ -1,0 +1,15 @@
+---
+  - name: Copy directory
+    copy:
+      src: "{{ app_source }}"
+      dest: "{{ app_destination }}"
+
+  - name: Change file ownership, group and permissions
+    ansible.builtin.file:
+      path: "{{ gradlew_directory }}"
+      owner: ubuntu
+      group: ubuntu
+      mode: '0775'
+
+  - name: Build application
+    shell: "{{ directory_entry_gradlew }}"

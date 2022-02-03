@@ -1,0 +1,3 @@
+---
+# vars for app deployment
+java_build_shell: "cd /home/ubuntu/java-test-app/ && nohup java -jar build/libs/aggregation-service-0.0.1-SNAPSHOT.jar > log.log 2>&1 &"

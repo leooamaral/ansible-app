@@ -1,0 +1,3 @@
+---
+  - name: Build application
+    shell: "{{ java_build_shell }}"
